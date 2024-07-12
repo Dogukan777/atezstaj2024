@@ -8,7 +8,7 @@ var router = express.Router();
 router.get('/list', async function(req, res, next) {
     const parameterId = req.query.id;
     const parameterName = req.query.name;
-    const searchName = parameterName.toString() +'%';
+    const searchName = parameterName +'%';
     var productsData=[];
     if(parameterId){
       productsData = await db('products').select('*').where('id',parameterId);
